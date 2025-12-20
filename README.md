@@ -63,9 +63,28 @@ Diseñar y validar un sistema supervisado de IA, explicable y adaptable, que max
 - Riesgos: integración de múltiples enfoques, claridad de explicaciones SHAP.
 - Mitigación: enfoque modular + reportes estandarizados.
 
+## Análisis Dashboard
+Se realizó una simulación de score combinando variables de riesgo que son las siguientes:
+**Variable	Riesgo**
+- is_foreign = 1		Riesgo alto
+- high_amount = 1	Riesgo alto
+- account_age_days < 30	Riesgo alto
+- amount > avg_amount	Riesgo medio
+- Horas nocturnas	Riesgo medio
+
+Una vez que tenemos el score a partir de este creamos el Nivel de Riesgo
+- Fraud_Score] >= 70, "Alto",
+- Fraud_Score] >= 40, "Medio",
+- Resto =  "Bajo"
+
+Dado que el conjunto de datos no incluía un score de riesgo explícito, se construyó un Índice de Riesgo Transaccional basado en reglas heurísticas, utilizando variables comúnmente asociadas al fraude financiero. Posteriormente, el índice fue validado comparando los niveles de riesgo con la ocurrencia real de fraude.
+
 ## 📌 Autores
-**Nombre**: César Cabrera (04.Dashboard), Ana Lucía Espinoza (01_Base_Datos.ipynb), Andrea Ordoñez(02_Feature_Engineering_y_Scoring.ipynb), Andrea Tapia(03_Modelo_explicable_SHAP_values.ipynb)
-**Email**: cesar.cabrerav@uees.edu.ec - ana.espinozaa@uees.edu.ec - andrea.ordonezr@uees.edu.ec - andrea.tapian@uees.edu.ec
+- **Nombre**: César Cabrera (04.Dashboard), Ana Lucía Espinoza (01_Base_Datos.ipynb), Andrea Ordoñez(02_Feature_Engineering_y_Scoring.ipynb), Andrea Tapia(03_Modelo_explicable_SHAP_values.ipynb)
+- **Email**: cesar.cabrerav@uees.edu.ec - ana.espinozaa@uees.edu.ec - andrea.ordonezr@uees.edu.ec - andrea.tapian@uees.edu.ec
+
+## Limitaciones presentes en el trabajo
+Es importante tener en consideración que el proyecto funcionó bien, sin embargo en exportación de colab a GitHub se presentaron problemas con el notebook: "Proyecto_Final/notebooks/04_DashboardFraudes.ipynb", puesto que se realizó un dashboard para simular la información en el aplicativo Streamlit, el archivo que contiene la data era pesado, no obstante se optó por se subir el comprimido. Por lo cual se optó por hacer un Dashboard también en Power BI, para presentación del proyecto de estudio. 
 
 
 ## 📚 Referencias
